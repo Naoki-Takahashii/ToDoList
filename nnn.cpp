@@ -22,7 +22,7 @@ public:
     };
     ToDoList()
     {
-        tasks = vector<Task>(); // tasksÇãÛÇÃÉxÉNÉ^Å[Ç≈èâä˙âªÇ∑ÇÈ
+        tasks = vector<Task>(); 
     }
 
     vector<Task> tasks;
@@ -79,7 +79,7 @@ public:
     {
         if (index >= 1 && index <= static_cast<int>(tasks.size()))
         {
-            cout << "ñ{ìñÇ…É^ÉXÉNÇçÌèúÇµÇ‹Ç∑Ç©ÅH (y/n): ";
+            cout << "Êú¨ÂΩì„Å´„Çø„Çπ„ÇØ„ÇíÂâäÈô§„Åó„Åæ„Åô„ÅãÔºü (y/n): ";
             char choice;
             cin >> choice;
 
@@ -87,16 +87,16 @@ public:
             {
                 Iterator it = tasks.begin() + index - 1;
                 tasks.erase(it);
-                cout << "É^ÉXÉNÇ™çÌèúÇ≥ÇÍÇ‹ÇµÇΩÅB" << endl;
+                cout << "„Çø„Çπ„ÇØ„ÅåÂâäÈô§„Åï„Çå„Åæ„Åó„Åü„ÄÇ" << endl;
             }
             else
             {
-                cout << "É^ÉXÉNÇÃçÌèúÇ™ÉLÉÉÉìÉZÉãÇ≥ÇÍÇ‹ÇµÇΩÅB" << endl;
+                cout << "„Çø„Çπ„ÇØ„ÅÆÂâäÈô§„Åå„Ç≠„É£„É≥„Çª„É´„Åï„Çå„Åæ„Åó„Åü„ÄÇ" << endl;
             }
         }
         else
         {
-            cout << "ñ≥å¯Ç»î‘çÜÇ≈Ç∑ÅB" << endl;
+            cout << "ÁÑ°Âäπ„Å™Áï™Âè∑„Åß„Åô„ÄÇ" << endl;
         }
     }
 
@@ -106,11 +106,11 @@ public:
         {
             Iterator it = tasks.begin() + index - 1;
             it->completed = true;
-            cout << "É^ÉXÉNÇ™äÆóπÇµÇ‹ÇµÇΩÅB" << endl;
+            cout << "„Çø„Çπ„ÇØ„ÅåÂÆå‰∫Ü„Åó„Åæ„Åó„Åü„ÄÇ" << endl;
         }
         else
         {
-            cout << "ñ≥å¯Ç»î‘çÜÇ≈Ç∑ÅB" << endl;
+            cout << "ÁÑ°Âäπ„Å™Áï™Âè∑„Åß„Åô„ÄÇ" << endl;
         }
     }
 
@@ -121,16 +121,16 @@ public:
 
     void printTasks() const
     {
-        cout << "ToDoÉäÉXÉg:" << endl;
+        cout << "ToDo„É™„Çπ„Éà:" << endl;
         int index = 1;
         for (auto it = tasks.begin(); it != tasks.end(); ++it)
         {
             const Task& task = *it;
             cout << index << ". ";
             if (task.completed)
-                cout << "[äÆóπ] ";
-            cout << task.description << " (ä˙å¿: " << task.deadline << ")" << endl;
-            cout << "   è⁄ç◊: " << task.details << endl;
+                cout << "[ÂÆå‰∫Ü] ";
+            cout << task.description << " (ÊúüÈôê: " << task.deadline << ")" << endl;
+            cout << "   Ë©≥Á¥∞: " << task.details << endl;
             ++index;
         }
         cout << endl;
@@ -143,29 +143,29 @@ public:
             Iterator it = tasks.begin() + index - 1;
             Task& task = *it;
 
-            cout << "É^ÉXÉNÇÃêVÇµÇ¢ê‡ñæÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢: ";
+            cout << "„Çø„Çπ„ÇØ„ÅÆÊñ∞„Åó„ÅÑË™¨Êòé„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ: ";
             cin.ignore();
             getline(cin, task.description);
 
-            cout << "É^ÉXÉNÇÃêVÇµÇ¢ä˙å¿Çì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ (ó·: 2023/07/31): ";
+            cout << "„Çø„Çπ„ÇØ„ÅÆÊñ∞„Åó„ÅÑÊúüÈôê„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ (‰æã: 2023/07/31): ";
             cin >> task.deadline;
 
-            cout << "è⁄ç◊Çï“èWÇµÇ‹Ç∑Ç©ÅH (y/n): ";
+            cout << "Ë©≥Á¥∞„ÇíÁ∑®ÈõÜ„Åó„Åæ„Åô„ÅãÔºü (y/n): ";
             char choice;
             cin >> choice;
 
             if (choice == 'y' || choice == 'Y')
             {
-                cout << "É^ÉXÉNÇÃêVÇµÇ¢è⁄ç◊Çì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢: ";
+                cout << "„Çø„Çπ„ÇØ„ÅÆÊñ∞„Åó„ÅÑË©≥Á¥∞„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ: ";
                 cin.ignore();
                 getline(cin, task.details);
             }
 
-            cout << "É^ÉXÉNÇ™ï“èWÇ≥ÇÍÇ‹ÇµÇΩÅB" << endl;
+            cout << "„Çø„Çπ„ÇØ„ÅåÁ∑®ÈõÜ„Åï„Çå„Åæ„Åó„Åü„ÄÇ" << endl;
         }
         else
         {
-            cout << "ñ≥å¯Ç»î‘çÜÇ≈Ç∑ÅB" << endl;
+            cout << "ÁÑ°Âäπ„Å™Áï™Âè∑„Åß„Åô„ÄÇ" << endl;
         }
     }
 
@@ -192,17 +192,17 @@ int main()
     {
         todo.printTasks();
 
-        cout << "ëÄçÏÇëIëÇµÇƒÇ≠ÇæÇ≥Ç¢ÅiîºäpêîéöÅj:" << endl;
-        cout << "1. É^ÉXÉNÇÃí«â¡" << endl;
-        cout << "2. É^ÉXÉNÇÃçÌèú" << endl;
-        cout << "3. É^ÉXÉNÇÃäÆóπ" << endl;
-        cout << "4. É^ÉXÉNÇÃï“èW" << endl;
-        cout << "5. èIóπ" << endl;
+        cout << "Êìç‰Ωú„ÇíÈÅ∏Êäû„Åó„Å¶„Åè„Å†„Åï„ÅÑÔºàÂçäËßíÊï∞Â≠óÔºâ:" << endl;
+        cout << "1. „Çø„Çπ„ÇØ„ÅÆËøΩÂä†" << endl;
+        cout << "2. „Çø„Çπ„ÇØ„ÅÆÂâäÈô§" << endl;
+        cout << "3. „Çø„Çπ„ÇØ„ÅÆÂÆå‰∫Ü" << endl;
+        cout << "4. „Çø„Çπ„ÇØ„ÅÆÁ∑®ÈõÜ" << endl;
+        cout << "5. ÁµÇ‰∫Ü" << endl;
 
         int choice;
         if (!(cin >> choice))
         {
-            cout << "ñ≥å¯Ç»ëIëÇ≈Ç∑ÅB" << endl;
+            cout << "ÁÑ°Âäπ„Å™ÈÅ∏Êäû„Åß„Åô„ÄÇ" << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             continue;
@@ -210,44 +210,44 @@ int main()
 
         if (choice == 1)
         {
-            cout << "É^ÉXÉNÇÃê‡ñæÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢: ";
+            cout << "„Çø„Çπ„ÇØ„ÅÆË™¨Êòé„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ: ";
             string description;
             cin.ignore();
             getline(cin, description);
 
-            cout << "ä˙å¿Çì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ (ó·: 2023/07/31): ";
+            cout << "ÊúüÈôê„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ (‰æã: 2023/07/31): ";
             string deadline;
             cin >> deadline;
 
-            cout << "è⁄ç◊Çì¸óÕÇµÇ‹Ç∑Ç©ÅH (y/n): ";
+            cout << "Ë©≥Á¥∞„ÇíÂÖ•Âäõ„Åó„Åæ„Åô„ÅãÔºü (y/n): ";
             char choice;
             cin >> choice;
 
             string details;
             if (choice == 'y' || choice == 'Y')
             {
-                cout << "è⁄ç◊Çì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢: ";
+                cout << "Ë©≥Á¥∞„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ: ";
                 cin.ignore();
                 getline(cin, details);
             }
 
             todo.addTask(description, deadline, details);
 
-            cout << "É^ÉXÉNÇ™í«â¡Ç≥ÇÍÇ‹ÇµÇΩÅB" << endl;
+            cout << "„Çø„Çπ„ÇØ„ÅåËøΩÂä†„Åï„Çå„Åæ„Åó„Åü„ÄÇ" << endl;
         }
         else if (choice == 2)
         {
             if (todo.isEmpty())
             {
-                cout << "çÌèúÇ∑ÇÈÉ^ÉXÉNÇ™Ç†ÇËÇ‹ÇπÇÒÅB" << endl;
+                cout << "ÂâäÈô§„Åô„Çã„Çø„Çπ„ÇØ„Åå„ÅÇ„Çä„Åæ„Åõ„Çì„ÄÇ" << endl;
             }
             else
             {
-                cout << "çÌèúÇ∑ÇÈÉ^ÉXÉNÇÃî‘çÜÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢: ";
+                cout << "ÂâäÈô§„Åô„Çã„Çø„Çπ„ÇØ„ÅÆÁï™Âè∑„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ: ";
                 int index;
                 if (!(cin >> index))
                 {
-                    cout << "ñ≥å¯Ç»î‘çÜÇ≈Ç∑ÅB" << endl;
+                    cout << "ÁÑ°Âäπ„Å™Áï™Âè∑„Åß„Åô„ÄÇ" << endl;
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     continue;
@@ -259,15 +259,15 @@ int main()
         {
             if (todo.isEmpty())
             {
-                cout << "äÆóπÇ∑ÇÈÉ^ÉXÉNÇ™Ç†ÇËÇ‹ÇπÇÒÅB" << endl;
+                cout << "ÂÆå‰∫Ü„Åô„Çã„Çø„Çπ„ÇØ„Åå„ÅÇ„Çä„Åæ„Åõ„Çì„ÄÇ" << endl;
             }
             else
             {
-                cout << "äÆóπÇ∑ÇÈÉ^ÉXÉNÇÃî‘çÜÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢: ";
+                cout << "ÂÆå‰∫Ü„Åô„Çã„Çø„Çπ„ÇØ„ÅÆÁï™Âè∑„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ: ";
                 int index;
                 if (!(cin >> index))
                 {
-                    cout << "ñ≥å¯Ç»î‘çÜÇ≈Ç∑ÅB" << endl;
+                    cout << "ÁÑ°Âäπ„Å™Áï™Âè∑„Åß„Åô„ÄÇ" << endl;
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     continue;
@@ -279,15 +279,15 @@ int main()
         {
             if (todo.isEmpty())
             {
-                cout << "ï“èWÇ∑ÇÈÉ^ÉXÉNÇ™Ç†ÇËÇ‹ÇπÇÒÅB" << endl;
+                cout << "Á∑®ÈõÜ„Åô„Çã„Çø„Çπ„ÇØ„Åå„ÅÇ„Çä„Åæ„Åõ„Çì„ÄÇ" << endl;
             }
             else
             {
-                cout << "ï“èWÇ∑ÇÈÉ^ÉXÉNÇÃî‘çÜÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢: ";
+                cout << "Á∑®ÈõÜ„Åô„Çã„Çø„Çπ„ÇØ„ÅÆÁï™Âè∑„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ: ";
                 int index;
                 if (!(cin >> index))
                 {
-                    cout << "ñ≥å¯Ç»î‘çÜÇ≈Ç∑ÅB" << endl;
+                    cout << "ÁÑ°Âäπ„Å™Áï™Âè∑„Åß„Åô„ÄÇ" << endl;
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     continue;
@@ -302,7 +302,7 @@ int main()
         }
         else
         {
-            cout << "ñ≥å¯Ç»ëIëÇ≈Ç∑ÅB" << endl;
+            cout << "ÁÑ°Âäπ„Å™ÈÅ∏Êäû„Åß„Åô„ÄÇ" << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
@@ -310,7 +310,7 @@ int main()
         cout << endl;
     }
 
-    cout << "ÉvÉçÉOÉâÉÄÇèIóπÇµÇ‹Ç∑ÅB" << endl;
+    cout << "„Éó„É≠„Ç∞„É©„É†„ÇíÁµÇ‰∫Ü„Åó„Åæ„Åô„ÄÇ" << endl;
 
     return 0;
 }
